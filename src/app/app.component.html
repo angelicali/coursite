@@ -1,0 +1,7 @@
+<h1>
+  {{title}}<br>
+  <div> {{ (af.auth | async)?.google.email }} </div>
+  <br>
+  <button (click)="login()">login here</button>
+
+</h1>

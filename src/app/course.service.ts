@@ -8,7 +8,7 @@ export class CourseService {
 
 
   getUserBtns(courseid: string, userid: string){
-    return this._http.get('http://coursite1.appspot.com/course/'+courseid+'/'+userid) //returns an observable
+    return this._http.get('https://coursite1.appspot.com/course/'+courseid+'/'+userid) //returns an observable
       .map(res => res.json());  //map the response we get back to a variable (left "res" is the passed-in value)
   }
 
@@ -18,7 +18,7 @@ export class CourseService {
     headers.append('Content-Type','application/x-www-form-urlencoded');
 
     console.log(body);
-    return this._http.post(`http://coursite1.appspot.com/editcourse/${courseid}/${userid}`,body,{headers:headers})
+    return this._http.post(`https://coursite1.appspot.com/editcourse/${courseid}/${userid}`,body,{headers:headers})
       .map(() => console.log("posting"));
   }
 

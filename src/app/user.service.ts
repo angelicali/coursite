@@ -8,7 +8,7 @@ export class UserService {
   constructor(private _http: Http) { }
 
   getUserInfo(uid: string){
-    return this._http.get('http://coursite1.appspot.com/user/'+uid) //returns an observable
+    return this._http.get('https://coursite1.appspot.com/user/'+uid) //returns an observable
       .map(res => res.json());  //map the response we get back to a variable (left "res" is the passed-in value)
   }
 
@@ -16,7 +16,7 @@ export class UserService {
     var body = `userid=${uid}&name=${name}`;
     var headers = new Headers();
       headers.append('Content-Type','application/x-www-form-urlencoded');
-    return this._http.post('http://coursite1.appspot.com/user/'+uid,body,{headers:headers})
+    return this._http.post('https://coursite1.appspot.com/user/'+uid,body,{headers:headers})
       .map(response => response.json());
   }
 
@@ -29,7 +29,7 @@ export class UserService {
     headers.append('Content-Type','application/x-www-form-urlencoded');
 
     console.log(body);
-    return this._http.post(`http://coursite1.appspot.com/user/${uid}`,body,{headers:headers})
+    return this._http.post(`https://coursite1.appspot.com/user/${uid}`,body,{headers:headers})
       .map(response => response.json());
 
 

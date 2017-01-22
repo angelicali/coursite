@@ -28,6 +28,7 @@ export class UserSettingsComponent implements OnInit {
       .subscribe(
         () => console.log("saving")
       );
+    location.reload();
   }
 
 }

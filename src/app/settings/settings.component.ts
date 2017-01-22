@@ -44,6 +44,7 @@ export class SettingsComponent implements OnInit {
       .subscribe(
         () => console.log("saving new btns")
       );
+    location.reload();  //TODO: remove reload after sync variables cross components
   }
 
   addBtn(){

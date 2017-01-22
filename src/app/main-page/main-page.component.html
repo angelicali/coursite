@@ -7,7 +7,7 @@
   <app-nav [courses]="courses" >Loading navigation bar....</app-nav>
 </div>
 <div class="main-box" *ngFor="let course of courses" id="{{course}}-btns">
-  <div class="right-top"><img class="icon" (click)="popUpSettings(course)" [src]="'/app/edit.png'"/></div>
+  <div class="right-top"><img class="icon" (click)="popUpSettings(course)" [src]="'./app/edit.png'"/></div>
   <app-btns [course]="course" [uid]="uid"></app-btns>
 
 </div>

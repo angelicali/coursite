@@ -1,0 +1,17 @@
+
+<!-- The Modal -->
+<div id="userSettings" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content" style="text-align: center">
+    <span (click)="closeUserSettings()" class="close">&times;</span>
+    <form>
+      write in the format of HOME,CS225,CS241
+      <textarea *ngIf="courses" id="inputCourses">{{courses}}</textarea>
+      <button (click)="saveProfileChanges()" class="save">Save Changes</button>
+    </form>
+
+
+  </div>
+
+</div>

@@ -1,0 +1,5 @@
+<div class="navigation">
+  <ul class='nav' id="course-list">
+    <li *ngFor="let course of courses; let i = index"  id="{{course}}-tab" (click)="clickOnTab(i)">{{course}}</li>
+  </ul>
+</div>

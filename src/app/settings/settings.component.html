@@ -1,0 +1,40 @@
+<!-- The Modal -->
+<div id="{{courseid}}-settings" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span (click)="closeSettings()" class="close">&times;</span>
+    <form>
+    <table *ngIf="btns">
+      <thead>
+      <tr>
+        <th class="btn-col">Button</th>
+        <th class="link-col">Link</th>
+      </tr>
+      </thead>
+      <tbody dnd-sortable-container [sortableData]="btns">
+      <!--<tbody>-->
+
+        <tr *ngFor="let btn of btns; let i=index" dnd-sortable [sortableIndex]="i">
+        <!--<tr *ngFor="let btn of btns; let i=index">-->
+          <td class="btn-col">
+            <input class="btn-name" type="text" value="{{btn.name}}" id="{{courseid}}-btn{{i}}-input">
+          </td>
+          <td class="link-col">
+            <input class="url" type="text" placeholder="URL goes here" value="{{btn.link}}" id="{{courseid}}-link{{i}}-input">
+          </td>
+          <td class="del-col">
+            <span (click)="deleteBtn(i)" class="close">&times;</span>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+      <button (click)="addBtn()" class="save">Add Button</button>
+      <button (click)="saveChanges()" class="save">Save Changes</button>
+    </form>
+
+
+  </div>
+
+</div>

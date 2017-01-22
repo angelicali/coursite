@@ -1,7 +1,11 @@
-<h1>
-  {{title}}<br>
-  <div> {{ (af.auth | async)?.google.email }} </div>
-  <br>
-  <button (click)="login()">login here</button>
 
-</h1>
+
+<div *ngIf="(af.auth | async)" class="content" >
+  <app-main-page [uid]="userid" [authname]="authname"></app-main-page>
+
+</div>
+
+<div *ngIf="(af.auth | async)==null" class="content" style="text-align: center;">
+  <button (click)="login()" class="hvr-rectangle-out">Login with Google</button>
+</div>
+

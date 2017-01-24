@@ -20,7 +20,7 @@ export class AppComponent {
       var authUser = auth;
       if(authUser) {
         this.userid = authUser.uid;
-        this.authname = authUser.google.displayName;
+        this.authname = authUser.google.displayName;  //TODO: name undefined here!
       }else{
         console.log("authUser is null");
       }

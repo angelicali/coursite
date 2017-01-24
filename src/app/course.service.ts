@@ -13,7 +13,7 @@ export class CourseService {
   }
 
   updateUserBtns(courseid: string, userid: string, buttons: any[]){
-    var body = `buttons=${JSON.stringify(buttons)}`;
+    var body = `buttons=${encodeURIComponent(JSON.stringify(buttons))}`;
     var headers = new Headers();
     headers.append('Content-Type','application/x-www-form-urlencoded');
 

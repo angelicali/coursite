@@ -45,8 +45,13 @@ export class MainPageComponent implements OnInit {
                   this.courses = this.user.courses;
                 }
             );
+            location.reload();
           }else {
-            this.name = this.user.name;
+            if(this.user.name == "undefined"){
+              this.name = this.authname;  //TODO: update user data for name as well!
+            }else {
+              this.name = this.user.name;
+            }
             this.courses = this.user.courses;
             console.log(this.user);
           }

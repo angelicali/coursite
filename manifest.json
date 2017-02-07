@@ -1,0 +1,15 @@
+{
+  "short_name": "Coursite",
+  "name": "Coursite",
+  "icons": [
+    {
+      "src":"app/edit.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "/?utm_source=homescreen",
+  "background_color": "#28474C",
+  "Theme_color": "#3B8686",
+  "display": "fullscreen"
+}

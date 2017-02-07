@@ -12,7 +12,8 @@
         "favicon.ico",
         "app/edit.png",
         "manifest.json",
-        "iconC.png"
+        "iconC.png",
+        "icon.png"
       ],
       "index": "index.html",
       "main": "main.ts",

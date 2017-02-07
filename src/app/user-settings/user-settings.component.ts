@@ -8,7 +8,7 @@ import {UserService} from "../user.service";
 })
 export class UserSettingsComponent implements OnInit {
   @Input()
-  courses: string[];//TODO: input courses for it
+  courses: string[];
   @Input()
   userid: string;
 
@@ -17,18 +17,36 @@ export class UserSettingsComponent implements OnInit {
   ngOnInit() {
   }
 
+  addCourse(){
+    this.courses.push("");
+  }
+
   closeUserSettings(){
     var modal = document.getElementById("userSettings");
     modal.style.display = "none";
   }
 
   saveProfileChanges(){
-    var inputCourses = (<HTMLInputElement>document.getElementById("inputCourses")).value;
-    this._userService.updateCourses(this.userid,inputCourses)
+    var new_courses, i, cid;
+    new_courses = new Array();
+    for(i=0; i< this.courses.length; i++){
+      cid = document.getElementById("course"+i);
+      cid = cid.value;
+      if(!(cid=="")){
+        new_courses.push(cid);
+      }
+    }
+    console.log(new_courses);
+    // var inputCourses = (<HTMLInputElement>document.getElementById("inputCourses")).value;
+    this._userService.updateCourses(this.userid,new_courses)
       .subscribe(
-        () => console.log("saving")
+        () => console.log("saving courses")
       );
-    location.reload();
+    location.reload();  //TODO: remove reload after sync variables cross components
+  }
+
+  deleteCourse(i: number){
+    this.courses.splice(i,1);
   }
 
 }

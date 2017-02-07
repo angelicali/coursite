@@ -6,10 +6,30 @@
   <div class="modal-content" style="text-align: center">
     <span (click)="closeUserSettings()" class="close">&times;</span>
     <form>
-      write in the format of HOME,CS225,CS241
-      <textarea *ngIf="courses" id="inputCourses">{{courses}}</textarea>
+      <table *ngIf="courses">
+        <thead>
+          <tr>
+            <th class="course-col">Courses</th>
+          </tr>
+        </thead>
+        <tbody dnd-sortable-container [sortableData]="courses">
+          <tr *ngFor="let c of courses; let i=index" dnd-sortable [sortableIndex]="i" class="course-row">
+            <td class="course-input-col">
+            <input class="btn-name course-input" type="text" value="{{c}}" id="course{{i}}">
+            </td>
+            <td class="del-col">
+              <span (click)="deleteCourse(i)" class="close">&times;</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!--<textarea *ngIf="courses" id="inputCourses">{{courses}}</textarea>-->
+      <button (click)="addCourse()" class="save">Add Course</button>
       <button (click)="saveProfileChanges()" class="save">Save Changes</button>
     </form>
+
+
 
 
   </div>

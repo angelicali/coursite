@@ -46,8 +46,29 @@ table {
 }
 
 .link-col {
-  width: 70%
+  width: 70%;
 }
+.course-col{
+  width: 100%;
+}
+.course-input-col{
+  /*width: 90%;*/
+}
+
+.course-input {
+  width:90%;
+  max-width:200px;
+}
+.course-row{
+  display:flex;
+  justify-content: center;
+}
+
+.del-col {
+  width:10%;
+  float: left;
+}
+
 
 input[type=text] {
   width: 100%;

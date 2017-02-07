@@ -21,9 +21,10 @@ export class UserService {
   }
 
   updateCourses(uid: string, courses: string){
-    var courseList = courses.split(",");
-    var courseListJSON = JSON.stringify(courseList);
+    // var courseList = courses.split(",");
+    // var courseListJSON = JSON.stringify(courseList);
 
+    var courseListJSON = JSON.stringify(courses);
     var body = `courses=${courseListJSON}`;
     var headers = new Headers();
     headers.append('Content-Type','application/x-www-form-urlencoded');

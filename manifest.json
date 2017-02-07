@@ -3,7 +3,7 @@
   "name": "Coursite",
   "icons": [
     {
-      "src":"app/iconC.png",
+      "src":"iconC.png",
       "sizes": "192x192",
       "type": "image/png"
     }

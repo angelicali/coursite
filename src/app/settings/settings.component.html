@@ -14,7 +14,7 @@
       </thead>
 
       <tbody dnd-sortable-container [sortableData]="btns">
-        <tr *ngFor="let btn of btns; let i=index" dnd-sortable [sortableIndex]="i">\
+        <tr *ngFor="let btn of btns; let i=index" dnd-sortable [sortableIndex]="i">
           <td class="btn-col">
             <input class="btn-name" type="text" value="{{btn.name}}" id="{{courseid}}-btn{{i}}-input">
           </td>

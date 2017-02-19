@@ -34,21 +34,20 @@ export class MainPageComponent implements OnInit {
         data => {
           this.user = data;
           if(this.user==null){
-            alert("First time login. I'll create an account for you :)");
             this._userService.createUser(this.uid, this.authname).
               subscribe(
                 data =>{
                   this.user = data;
-                  //console.log("created user?");
-                  //console.log(this.user);
                   this.name = this.user.name;
                   this.courses = this.user.courses;
                 }
             );
+            alert("Welcome! When your name shows up on the page, click your name to add your courses(e.g. PHYS212)!");
             location.reload();
           }else {
             if(this.user.name == "undefined"){
               this.name = this.authname;  //TODO: update user data for name as well!
+              this._userService.createUser(this.uid, this.authname);
             }else {
               this.name = this.user.name;
             }

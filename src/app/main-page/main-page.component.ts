@@ -20,7 +20,7 @@ export class MainPageComponent implements OnInit {
   courses: string[];
 
   constructor(private _userService: UserService) {
-      this.term = "Spring";
+      this.term = "Fall";
       this.year = 2017;
   }
 
